@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/c7a8988988.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Spotify </title>
 </head>
 <body>
     <div class="container">
-        <nav> 
+        <nav class="sidebar"> 
             <div class="logo">
                 <i class="fa-brands fa-spotify"></i>
             </div>
@@ -34,9 +35,23 @@
                 <a href="#">Sobre Anúncios</a>
                 <a href="#">Acessibilidade</a>
             </div> 
+            <button class="nav-language-button">
+                <i class="fa-solid fa-globe"></i>
+                Português do Brasil
+            </button>
         </nav>
         <main>
-        
+            <header ckass="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input placeholder="O que você quer ouvir">
+            </header>
+            <section class="content">
+                <h2>Artistas Populares</h2>
+                <div class="artists-grid"></div>
+
+                <h2>Álbuns Populares</h2>
+                <div class="albums-grid"></div>
+            </section>    
         </main>
     </div>
 </body>
