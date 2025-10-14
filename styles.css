@@ -14,5 +14,22 @@ body {
     height: 100vh;
 }
 
-.sidebar {
+.sidebar {  
+    width: 300px;
+    background-color: #121212;
+    padding: 24px;
+    padding-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-library {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-library i, .nav-library p {
+    color: #b7b3b6;
+    font-size: 14px;
 }
