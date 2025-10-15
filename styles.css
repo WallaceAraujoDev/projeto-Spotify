@@ -96,3 +96,16 @@ body {
     cursor: pointer;
     border-radius: 20px;
 }
+
+main {
+    padding: 24px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #242424;
+    padding: 8px 16px;
+    border-radius: 20px;
+    width: 300px;
+}

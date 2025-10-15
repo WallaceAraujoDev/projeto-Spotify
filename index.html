@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/c7a8988988.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
-    <title>Spotify </title>
+    <title>Spotify</title>
 </head>
 <body>
     <div class="container">
         <nav class="sidebar"> 
             <div class="logo">
                 <i class="fa-brands fa-spotify"></i>
+                <span>Spotify</span> <!-- Adicionei o nome -->
             </div>
             <div class="nav-library">
                 <i class="fa-solid fa-book"></i>
@@ -24,8 +25,8 @@
             </div>
             <div class="nav-podcast">
                 <h5>Que tal Seguir um Podcast?</h5>
-                <p>Avisaremos voê sobre nossos episódios</p>
-                <button>Explore Podicast</button>
+                <p>Avisaremos você sobre nossos episódios</p> <!-- Corrigi "voê" para "você" -->
+                <button>Explore Podcast</button> <!-- Corrigi "Podicast" para "Podcast" -->
             </div>   
             <div class="nav-footer">
                 <a href="#">Legal</a>
@@ -41,9 +42,9 @@
             </button>
         </nav>
         <main>
-            <header ckass="search-bar">
+            <header class="search-bar"> <!-- Corrigi "ckass" para "class" -->
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input placeholder="O que você quer ouvir">
+                <input placeholder="O que você quer ouvir"> <!-- Corrigi "voê" para "você" -->
             </header>
             <section class="content">
                 <h2>Artistas Populares</h2>
@@ -54,6 +55,6 @@
             </section>    
         </main>
     </div>
+    <script src="./scripts.js"></script> <!-- Mova o script para antes do </body> -->
 </body>
-<script src="./scripts.js"></script>
 </html>
