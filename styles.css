@@ -99,6 +99,8 @@ body {
 
 main {
     padding: 24px;
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 .search-bar {
@@ -108,4 +110,34 @@ main {
     padding: 8px 16px;
     border-radius: 20px;
     width: 300px;
+}
+
+.search-bar input {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    width: 100%;
+    margin-left: 10px;
+    outline: none;
+}
+
+.artists-grid, .albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.artist-card, .album-card {
+    background-color: #181818;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+.artist-card:hover, .album-card:hover {
+    background-color: #282828;
 }
