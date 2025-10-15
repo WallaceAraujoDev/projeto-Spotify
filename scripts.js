@@ -1,50 +1,57 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Array de artistas
+    // Corrigido: Nomes dos artistas para melhor representação (se for um clone)
     const artists = [
-        { name: 'Morrique & Juliano', image: './img/artista-henrique-juliano.jpg' },
-        { name: 'Jorge & Mateu', image: './img/artista-jorge-mateus.jpg' },
+        { name: 'Henrique & Juliano', image: './img/artista-henrique-juliano.jpg' },
+        { name: 'Jorge & Mateus', image: './img/artista-jorge-mateus.jpg' },
         { name: 'Zé Neto & Cristiano', image: './img/artista-ze-neto.jpg' },
-        { name: 'Gustavo Lima', image: './img/artista-gustavo-limma.jpg' },
+        { name: 'Gusttavo Lima', image: './img/artista-gustavo-limma.jpg' },
         { name: 'Luan Santana', image: './img/artista-luan-santana.jpg' },
         { name: 'Matheus & Kauan', image: './img/artista-mateus-kauan.jpg' }
     ];
 
-    // Array de álbuns
+    // Corrigido: Nomes dos álbuns/artistas
     const albumData = [
-        { name: 'Molto Molto (Sleep & Relaxation Sounds)', artist: 'Sleepy John', image: './img/album-white-noise.jpg' },
-        { name: 'O del Espíldia Todo (Ao Vivo)', artist: 'Morrique & Juliano', image: './img/album-caju.jpg' },
-        { name: 'Nada como un día após o outro', artist: 'Reclama\'s', image: './img/album-vida-loka.jpg' },
-        { name: 'HIIT ME NANO AND SOFT', artist: 'Billie Ellian', image: './img/album-hit-me.jpg' },
-        { name: 'COJO', artist: 'Linker', image: './img/album-racionais.jpg' },
-        { name: 'Escándalo Intimo', artist: 'Luisa Souza', image: './img/album-escandalo.jpg' }
+        { name: 'White Noise', artist: 'Sleepy John', image: './img/album-white-noise.jpg' },
+        { name: 'O Caju Todo (Ao Vivo)', artist: 'Henrique & Juliano', image: './img/album-caju.jpg' },
+        { name: 'Nada Como um Dia Após o Outro', artist: 'Racionais MC\'s', image: './img/album-vida-loka.jpg' },
+        { name: 'HIT ME HARD AND SOFT', artist: 'Billie Eilish', image: './img/album-hit-me.jpg' },
+        { name: 'COJO', artist: 'Liniker', image: './img/album-racionais.jpg' }, // Assumindo uma imagem de capa genérica para este exemplo
+        { name: 'Escândalo Íntimo', artist: 'Luísa Sonza', image: './img/album-escandalo.jpg' }
     ];
 
     const artistGrid = document.querySelector('.artists-grid');
     const albumsGrid = document.querySelector('.albums-grid');
 
+    /**
+     * Função reutilizável para criar e renderizar um card.
+     * @param {Object} data - Dados do item (nome, imagem).
+     * @param {string} type - 'artist' ou 'album'.
+     * @param {string} subtitle - Subtítulo do card.
+     * @param {HTMLElement} targetGrid - O elemento pai onde o card será inserido.
+     */
+    const renderCard = (data, type, subtitle, targetGrid) => {
+        const card = document.createElement('a'); // Usar <a> para navegação
+        card.href = '#'; // Link dummy
+        card.classList.add(`${type}-card`);
+
+        // Uso de template string com a função subtitle para dinamicidade
+        card.innerHTML = `
+            <img src="${data.image}" alt="${data.name}">
+            <h3>${data.name}</h3>
+            <p>${subtitle}</p>
+        `;
+        
+        targetGrid.appendChild(card);
+    };
+
     // Renderizar artistas
     artists.forEach(artist => {
-        const artistCard = document.createElement('div');
-        artistCard.classList.add('artist-card');
-        
-        artistCard.innerHTML = `
-            <img src="${artist.image}" alt="${artist.name}">
-            <h3>${artist.name}</h3>
-            <p>Artista</p>
-        `;
-        artistGrid.appendChild(artistCard); // Corrigido: era artistGrid em vez de artistCard
+        renderCard(artist, 'artist', 'Artista', artistGrid);
     });
 
-    // Renderizar álbuns (faltava esta parte)
+    // Renderizar álbuns
     albumData.forEach(album => {
-        const albumCard = document.createElement('div');
-        albumCard.classList.add('album-card');
-        
-        albumCard.innerHTML = `
-            <img src="${album.image}" alt="${album.name}">
-            <h3>${album.name}</h3>
-            <p>${album.artist}</p>
-        `;
-        albumsGrid.appendChild(albumCard);
+        // O subtítulo do álbum é o nome do artista
+        renderCard(album, 'album', album.artist, albumsGrid);
     });
 });

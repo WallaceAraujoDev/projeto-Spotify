@@ -3,58 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c7a8988988.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
-    <title>Spotify</title>
-</head>
+    <title>Spotify Clone</title> </head>
 <body>
     <div class="container">
         <nav class="sidebar"> 
-            <div class="logo">
-                <i class="fa-brands fa-spotify"></i>
-                <span>Spotify</span> <!-- Adicionei o nome -->
+            <div class="sidebar-section main-links">
+                <a href="#" class="logo-link">
+                    <i class="fa-brands fa-spotify"></i>
+                    <span>Spotify</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Início</span>
+                </a>
+                <a href="#" class="nav-item search-item">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Buscar</span>
+                </a>
             </div>
-            <div class="nav-library">
-                <i class="fa-solid fa-book"></i>
-                <p>Sua Biblioteca</p>
-            </div>
-            <div class="nav-playlist">
-                <h5>Crie Sua Primeira Playlist</h5>
-                <p>É fácil, vamos te ajudar</p>
-                <button>Criar Playlist</button>
-            </div>
-            <div class="nav-podcast">
-                <h5>Que tal Seguir um Podcast?</h5>
-                <p>Avisaremos você sobre nossos episódios</p> <!-- Corrigi "voê" para "você" -->
-                <button>Explore Podcast</button> <!-- Corrigi "Podicast" para "Podcast" -->
-            </div>   
-            <div class="nav-footer">
-                <a href="#">Legal</a>
-                <a href="#">Centro de Privacidade</a>
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Cookies</a>
-                <a href="#">Sobre Anúncios</a>
-                <a href="#">Acessibilidade</a>
-            </div> 
-            <button class="nav-language-button">
-                <i class="fa-solid fa-globe"></i>
-                Português do Brasil
-            </button>
-        </nav>
-        <main>
-            <header class="search-bar"> <!-- Corrigi "ckass" para "class" -->
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input placeholder="O que você quer ouvir"> <!-- Corrigi "voê" para "você" -->
-            </header>
-            <section class="content">
-                <h2>Artistas Populares</h2>
-                <div class="artists-grid"></div>
 
+            <div class="sidebar-section library">
+                <div class="nav-library-header">
+                    <i class="fa-solid fa-book"></i>
+                    <p>Sua Biblioteca</p>
+                    <button class="add-button"><i class="fa-solid fa-plus"></i></button> </div>
+
+                <div class="nav-playlist content-card">
+                    <h5>Crie Sua Primeira Playlist</h5>
+                    <p>É fácil, vamos te ajudar</p>
+                    <button class="primary-button">Criar Playlist</button>
+                </div>
+                <div class="nav-podcast content-card">
+                    <h5>Que tal Seguir um Podcast?</h5>
+                    <p>Avisaremos você sobre novos episódios</p>
+                    <button class="primary-button">Explore Podcast</button>
+                </div>
+            </div>
+
+            <div class="sidebar-section footer-links">
+                <div class="nav-footer">
+                    <a href="#">Legal</a>
+                    <a href="#">Centro de Privacidade</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Sobre Anúncios</a>
+                    <a href="#">Acessibilidade</a>
+                </div>
+                <div class="nav-footer second-line">
+                    <a href="#">Cookies</a>
+                </div>
+                
+                <button class="nav-language-button">
+                    <i class="fa-solid fa-globe"></i>
+                    Português do Brasil
+                </button>
+            </div>
+        </nav>
+        
+        <main class="main-content">
+            <header class="main-header">
+                <div class="navigation-buttons">
+                    <button class="nav-arrow" aria-label="Voltar"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="nav-arrow" aria-label="Avançar"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+
+                <div class="user-actions">
+                    <button class="signup-button">Inscrever-se</button>
+                    <button class="login-button">Entrar</button>
+                </div>
+            </header>
+
+            <section class="content-section">
+                <h2>Artistas Populares</h2>
+                <div class="cards-grid artists-grid">
+                    </div>
+            </section>
+
+            <section class="content-section">
                 <h2>Álbuns Populares</h2>
-                <div class="albums-grid"></div>
-            </section>    
+                <div class="cards-grid albums-grid">
+                    </div>
+            </section>
         </main>
     </div>
-    <script src="./scripts.js"></script> <!-- Mova o script para antes do </body> -->
+    
+    <footer class="player-bar">
+        <p>Barra do Player</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
 </body>
 </html>
